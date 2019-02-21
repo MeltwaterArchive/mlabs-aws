@@ -97,6 +97,7 @@
     "node": ">=8.9.0"
   },
   "dependencies": {
+    "@meltwater/mlabs-logger": "^5.1.2",
     "aws-sdk": "^2.408.0"
   },
   "devDependencies": {

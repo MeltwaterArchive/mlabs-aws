@@ -683,7 +683,7 @@
   dependencies:
     arrify "^1.0.1"
 
-"@meltwater/examplr@^4.2.0":
+"@meltwater/examplr@^4.2.0", "@meltwater/examplr@^4.2.1":
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/@meltwater/examplr/-/examplr-4.2.1.tgz#dc3750c24af3c09c45af6491ff6b0b43935684c3"
   integrity sha512-xizA4IR8rjl9VHXJW32q+ScavdymOtbqurypy18l7eZmiwrkMjy0RV7sOZbKBn1qwCnyIAczPqRuFs/bRpE+xg==
@@ -692,6 +692,16 @@
     change-case "^3.0.1"
     pino "^5.4.1"
     pino-pretty "^2.1.0"
+
+"@meltwater/mlabs-logger@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@meltwater/mlabs-logger/-/mlabs-logger-5.1.2.tgz#7c226a3ca487a0b2d2be499d6b2c8597d8317365"
+  integrity sha512-B/ujx6UnZNisxta1rg/OB549HDzZ3X6T/zhrP3bCdegA8kASvnLq86Gwg3jAXO4BpsyFAq/MSXhpD01o7mLjKQ==
+  dependencies:
+    "@meltwater/examplr" "^4.2.1"
+    bunyan-formatter "^1.0.0"
+    debug "^4.0.1"
+    pino "^5.4.0"
 
 JSV@^4.0.x:
   version "4.0.2"
@@ -1888,7 +1898,7 @@ debug@^3.1.0:
   dependencies:
     ms "^2.1.1"
 
-debug@^4.1.0, debug@^4.1.1:
+debug@^4.0.1, debug@^4.1.0, debug@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.1.1.tgz#3b72260255109c6b589cee050f1d516139664791"
   integrity sha512-pYAIzeRo8J6KPEaJ0VWOh5Pzkbw/RetuzehGM7QRRX5he4fPHx2rdKMB256ehJCkX+XRQm16eZLqLNS8RSZXZw==
@@ -5053,7 +5063,7 @@ pino-std-serializers@^2.3.0:
   resolved "https://registry.yarnpkg.com/pino-std-serializers/-/pino-std-serializers-2.3.0.tgz#34eeaab97c055c28e22c0542ae55978e7e427786"
   integrity sha512-klfGoOsP6sJH7ON796G4xoUSx2fkpFgKHO4YVVO2zmz31jR+etzc/QzGJILaOIiCD6HTCFgkPx+XN8nk+ruqPw==
 
-pino@^5.4.1:
+pino@^5.4.0, pino@^5.4.1:
   version "5.11.1"
   resolved "https://registry.yarnpkg.com/pino/-/pino-5.11.1.tgz#2d6d8edb7ebc7c354be03bfa04fd436352e1d67b"
   integrity sha512-NIua0mGb9Adknq35ONvQmvh93LCUVUjp2+1q1EcvIkJmpJnSd3E5rHVKlKNjzMXFl/z3fI+QA0xXCjPEKNiLvQ==
