@@ -1,7 +1,7 @@
 {
-  "name": "@meltwater/makenew-node-lib",
-  "version": "5.3.1",
-  "description": "npm package skeleton for Meltwater Node.js libraries.",
+  "name": "@meltwater/mlabs-aws",
+  "version": "0.0.0",
+  "description": "AWS tools.",
   "main": "dist/index.js",
   "module": "index.js",
   "sideEffects": false,
@@ -9,9 +9,9 @@
     "meltwater",
     "node"
   ],
-  "homepage": "https://github.com/meltwater/makenew-node-lib",
-  "bugs": "https://github.com/meltwater/makenew-node-lib/issues",
-  "repository": "meltwater/makenew-node-lib",
+  "homepage": "https://github.com/meltwater/mlabs-aws",
+  "bugs": "https://github.com/meltwater/mlabs-aws/issues",
+  "repository": "meltwater/mlabs-aws",
   "license": "SEE LICENSE IN LICENSE.txt",
   "author": {
     "name": "Evan Sosenko",
