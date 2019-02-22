@@ -98,7 +98,9 @@
   },
   "dependencies": {
     "@meltwater/mlabs-logger": "^5.1.2",
-    "aws-sdk": "^2.408.0"
+    "aws-sdk": "^2.408.0",
+    "sqs-consumer": "^5.0.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

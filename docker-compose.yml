@@ -1,0 +1,14 @@
+---
+version: '3'
+
+services:
+  sqs:
+    image: pafortin/goaws
+    networks:
+      - mlabs-aws
+    ports:
+      - 4100:4100
+
+networks:
+  mlabs-aws:
+    driver: bridge

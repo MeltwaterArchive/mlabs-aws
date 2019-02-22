@@ -10,6 +10,7 @@ executors:
     working_directory: ~/build
     docker:
       - image: node:<< parameters.tag >>
+      - image: pafortin/goaws
 
 commands:
   setup:

@@ -1147,6 +1147,21 @@ ava@^1.0.1:
     unique-temp-dir "^1.0.0"
     update-notifier "^2.5.0"
 
+aws-sdk@^2.393.0:
+  version "2.409.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.409.0.tgz#d017060ba9e005487c68dc34a592af74d916f295"
+  integrity sha512-QV6j9zBQq/Kz8BqVOrJ03ABjMKtErXdUT1YdYEljoLQZimpzt0ZdQwJAsoZIsxxriOJgrqeZsQUklv9AFQaldQ==
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
+    xml2js "0.4.19"
+
 aws-sdk@^2.408.0:
   version "2.408.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.408.0.tgz#63b5fd9aad198b34aa45b12ee6100c0f612cb13d"
@@ -5934,6 +5949,14 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
   integrity sha1-BOaSb2YolTVPPdAVIDYzuFcpfiw=
+
+sqs-consumer@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/sqs-consumer/-/sqs-consumer-5.0.1.tgz#8bad8a78992dd816df63a038140a51102292a745"
+  integrity sha512-Pyp21H1CTieuewKr0MUe4cq++c7tesC+mxAJzU/pAWpniAM6mI0Xz0O9ZGMtEH7adti2kjaVBorjeV8wLHrWNQ==
+  dependencies:
+    aws-sdk "^2.393.0"
+    debug "^4.1.1"
 
 stack-trace@0.0.10:
   version "0.0.10"
