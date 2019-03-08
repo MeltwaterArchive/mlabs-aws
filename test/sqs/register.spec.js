@@ -22,13 +22,17 @@ test('process', async t => {
 
   container.register('t', asValue(t))
 
-  const msg = JSON.stringify({ a: 2 })
+  const msg = JSON.stringify({ reqId: 2 })
   const event = new EventEmitter()
   const process = m => { event.emit('data', m) }
 
   registerQueue(container, {
     ...queueConfig,
-    createProcessor: () => process,
+    createProcessor: ({ log, reqId }) => async (...args) => {
+      log.info('Process: Start')
+      t.is(reqId, 2)
+      await process(...args)
+    },
     clientOptions
   })
   const queue = container.resolve(`${queueConfig.name}Queue`)
@@ -38,6 +42,6 @@ test('process', async t => {
 
   await queue.start()
   const body = await new Promise(resolve => { event.on('data', resolve) })
-  t.deepEqual(body, { a: 2 })
+  t.deepEqual(body, { reqId: 2 })
   await queue.stop()
 })
