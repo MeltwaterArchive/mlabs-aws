@@ -1,8 +1,9 @@
 ---
-version: '3'
+version: '3.7'
 
 services:
   sqs:
+    init: true
     image: pafortin/goaws
     networks:
       - mlabs-aws
