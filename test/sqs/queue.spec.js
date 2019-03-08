@@ -33,6 +33,7 @@ test('stop', async t => {
 })
 
 test('process', async t => {
+  t.timeout(3000)
   const msg = JSON.stringify({ a: 2 })
   const event = new EventEmitter()
   const handler = m => { event.emit('data', m) }
