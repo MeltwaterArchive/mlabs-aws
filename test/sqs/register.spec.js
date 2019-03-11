@@ -35,7 +35,7 @@ test('process', async t => {
     },
     clientOptions
   })
-  const queue = container.resolve(`${queueConfig.name}Queue`)
+  const queue = container.resolve(`${queueConfig.name}SqsQueue`)
 
   await queue.create()
   await t.context.publish(msg)
