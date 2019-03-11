@@ -5,7 +5,7 @@ import { createContainer, asValue, asFunction } from 'awilix'
 import createLogger from '@meltwater/mlabs-logger'
 
 import { setupContext } from './helpers'
-import { registerQueue } from '../../lib/sqs/register'
+import { registerSqsQueue } from '../../lib'
 
 test.beforeEach(async t => {
   await setupContext(t)
@@ -26,7 +26,7 @@ test('process', async t => {
   const event = new EventEmitter()
   const process = m => { event.emit('data', m) }
 
-  registerQueue(container, {
+  registerSqsQueue(container, {
     ...queueConfig,
     createProcessor: ({ log, reqId }) => async (...args) => {
       log.info('Process: Start')
