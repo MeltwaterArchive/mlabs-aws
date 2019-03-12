@@ -22,7 +22,7 @@ test('process', async t => {
 
   container.register('t', asValue(t))
 
-  const msg = { reqId: 2 }
+  const msg = { a: '1', reqId: 2 }
   const event = new EventEmitter()
   const process = m => { event.emit('data', m) }
 
@@ -42,6 +42,6 @@ test('process', async t => {
 
   await queue.start()
   const body = await new Promise(resolve => { event.on('data', resolve) })
-  t.deepEqual(body, { reqId: 2 })
+  t.deepEqual(body, { a: '1', reqId: 2 })
   await queue.stop()
 })
