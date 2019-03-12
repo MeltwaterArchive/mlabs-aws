@@ -4,12 +4,12 @@ import test from 'ava'
 import createLogger from '@meltwater/mlabs-logger'
 
 import { setupContext } from './helpers'
-import Queue from '../../lib/sqs/queue'
+import { SqsQueue } from '../../lib'
 
 test.beforeEach(async t => {
   await setupContext(t)
 
-  t.context.queue = (t, handler = x => x) => new Queue({
+  t.context.queue = (t, handler = x => x) => new SqsQueue({
     ...t.context.queueConfig,
     handler,
     log: createLogger({ t })
