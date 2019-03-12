@@ -22,7 +22,7 @@ test('process', async t => {
 
   container.register('t', asValue(t))
 
-  const msg = JSON.stringify({ reqId: 2 })
+  const msg = { reqId: 2 }
   const event = new EventEmitter()
   const process = m => { event.emit('data', m) }
 
@@ -38,7 +38,7 @@ test('process', async t => {
   const queue = container.resolve(`${queueConfig.name}SqsQueue`)
 
   await queue.create()
-  await t.context.publish(msg)
+  await queue.publish(msg, { json: true })
 
   await queue.start()
   const body = await new Promise(resolve => { event.on('data', resolve) })

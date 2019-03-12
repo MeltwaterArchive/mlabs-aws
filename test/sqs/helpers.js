@@ -30,11 +30,6 @@ export const setupContext = async t => {
   t.context.clientOptions = { ...clientOptions, endpoint }
   const sqsClient = new SQS(t.context.clientOptions)
 
-  t.context.publish = (body) => sqsClient.sendMessage({
-    QueueUrl: url,
-    MessageBody: body.toString()
-  }).promise()
-
   t.context.queueConfig = {
     name,
     url,

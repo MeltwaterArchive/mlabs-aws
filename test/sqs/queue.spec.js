@@ -38,7 +38,7 @@ test('process', async t => {
   const event = new EventEmitter()
   const handler = m => { event.emit('data', m) }
   const queue = t.context.queue(t, handler)
-  await t.context.publish(msg)
+  await queue.publish(msg)
 
   await queue.start()
   const { Body } = await new Promise(resolve => { event.on('data', resolve) })
