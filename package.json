@@ -1,6 +1,6 @@
 {
   "name": "@meltwater/mlabs-aws",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "AWS tools.",
   "main": "dist/index.js",
   "module": "index.js",
