@@ -38,7 +38,7 @@ test('process', async t => {
   const queue = container.resolve(`${queueConfig.name}SqsQueue`)
 
   await queue.create()
-  await queue.publish(msg, { json: true })
+  await queue.publish(msg)
 
   await queue.start()
   const body = await new Promise(resolve => { event.on('data', resolve) })
