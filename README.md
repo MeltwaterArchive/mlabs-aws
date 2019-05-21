@@ -10,12 +10,14 @@ Convenient wrappers around the AWS SDK to keep code DRY.
 
 ## Description
 
-Implements typical use cases of the AWS SDK.
+Implements typical use cases of the AWS SDK for JavaScript.
 
 All methods are wrapped with proper logging and error handling.
 
 - Create or register a queue
   in the Awilix dependency tree with automatic creation of sub-dependencies.
+
+[AWS SDK for JavaScript]: https://github.com/aws/aws-sdk-js
 
 ## Installation
 
@@ -243,19 +245,17 @@ An HTML version will be saved in `coverage`.
 
 ##### Debugging tests
 
-<!--- TODO: Update all use true.spec.js with added spec. -->
-
 Create a breakpoint by adding the statement `debugger` to the test
 and start a debug session with, e.g.,
 
 ```
-$ yarn run test:inspect lib/true.spec.js
+$ yarn run test:inspect test/sqs/queue.spec.js
 ```
 
 Watch and restart the debugging session on changes with
 
 ```
-$ yarn run test:inspect:watch lib/true.spec.js
+$ yarn run test:inspect:watch test/sqs/queue.spec.js
 ```
 
 [AVA]: https://github.com/avajs/ava
