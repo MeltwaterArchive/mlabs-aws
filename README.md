@@ -46,7 +46,7 @@ const queue = new SqsQueue({
   sqsClient: new SQS(),
   handler: async message => { console.log(message) },
   name: 'my-queue',
-  url: https://example.com/my-queue
+  url: 'https://example.com/my-queue'
 })
 
 const logMessages = async () => {
