@@ -18,7 +18,7 @@ const clientOptions = {
   }
 }
 
-const getEndpoint = () => {
+export const getEndpoint = () => {
   const host = getDockerHost()
   return `http://${host}:${port}`
 }
