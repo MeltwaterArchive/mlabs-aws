@@ -6,9 +6,16 @@
 [![Codecov](https://img.shields.io/codecov/c/token/KAivmcEoIT/github/meltwater/mlabs-aws.svg)](https://codecov.io/gh/meltwater/mlabs-aws)
 [![CircleCI](https://circleci.com/gh/meltwater/mlabs-aws.svg?style=shield&circle-token=083702489c419182951c5e37452ffaabcc4becac)](https://circleci.com/gh/meltwater/mlabs-aws)
 
+Convenient wrappers around the AWS SDK to keep code DRY.
+
 ## Description
 
-AWS tools.
+Implements typical use cases of the AWS SDK.
+
+All methods are wrapped with proper logging and error handling.
+
+- Create or register a queue
+  in the Awilix dependency tree with automatic creation of sub-dependencies.
 
 ## Installation
 
@@ -29,22 +36,24 @@ $ yarn add @meltwater/mlabs-aws
 
 ## Usage
 
-<!--- TODO: Update usage example for added module(s). -->
-
 **See the complete [API documentation](./docs) and [working examples](./examples).**
 
-This package provides an async function which checks if its argument is true.
-
 ```js
-import isTrue from '@meltwater/mlabs-aws'
+import { SQS } from 'aws-sdk'
+import { SqsQueue } from '@meltwater/mlabs-aws'
 
-const logTrue = async () => {
-  const trueValue = await isTrue(true)
-  console.log(trueValue)
+const queue = new SqsQueue({
+  sqsClient: new SQS(),
+  handler: async message => { console.log(message) },
+  name: 'my-queue',
+  url: https://example.com/my-queue
+})
+
+const logMessages = async () => {
+  await queue.create()
+  await queue.publish({ hello: 'world' })
+  await queue.start()
 }
-
-logTrue().catch(err => { console.log(err) })
-// true
 ```
 
 ## Development Quickstart
