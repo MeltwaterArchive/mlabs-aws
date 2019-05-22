@@ -1,10 +1,10 @@
 # mLabs AWS
 
-[![npm](https://img.shields.io/badge/npm-%40meltwater%2Fmlabs--aws-blue.svg)](https://www.npmjs.com/package/@meltwater/mlabs-aws)
+[![npm](https://img.shields.io/npm/v/@meltwater/mlabs-aws.svg)](https://www.npmjs.com/package/@meltwater/mlabs-aws)
 [![github](https://img.shields.io/badge/github-repo-blue.svg)](https://github.com/meltwater/mlabs-aws)
 [![docs](https://img.shields.io/badge/docs-master-green.svg)](https://github.com/meltwater/mlabs-aws/tree/master/docs)
-[![Codecov](https://img.shields.io/codecov/c/token/KAivmcEoIT/github/meltwater/mlabs-aws.svg)](https://codecov.io/gh/meltwater/mlabs-aws)
-[![CircleCI](https://circleci.com/gh/meltwater/mlabs-aws.svg?style=shield&circle-token=083702489c419182951c5e37452ffaabcc4becac)](https://circleci.com/gh/meltwater/mlabs-aws)
+[![Codecov](https://img.shields.io/codecov/c/github/meltwater/mlabs-aws.svg)](https://codecov.io/gh/meltwater/mlabs-aws)
+[![CircleCI](https://img.shields.io/circleci/project/github/meltwater/mlabs-aws.svg)](https://circleci.com/gh/meltwater/mlabs-aws)
 
 Convenient wrappers around the AWS SDK to keep code DRY.
 
