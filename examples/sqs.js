@@ -7,9 +7,7 @@ import { SqsQueue } from '../lib'
 
 const getDockerHost = () => {
   const dockerHost = process.env.DOCKER_HOST
-  return dockerHost
-    ? new URL(process.env.DOCKER_HOST).hostname
-    : 'localhost'
+  return dockerHost ? new URL(process.env.DOCKER_HOST).hostname : 'localhost'
 }
 
 const createSqsClient = () => {
@@ -34,7 +32,9 @@ export default ({ log }) => async (message = 'world') => {
 
   const queue = new SqsQueue({
     sqsClient: createSqsClient(),
-    handler: message => { e.emit('data', message) },
+    handler: message => {
+      e.emit('data', message)
+    },
     name,
     url,
     log

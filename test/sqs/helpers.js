@@ -3,9 +3,7 @@ import { SQS } from 'aws-sdk'
 
 const getDockerHost = () => {
   const dockerHost = process.env.DOCKER_HOST
-  return dockerHost
-    ? new URL(process.env.DOCKER_HOST).hostname
-    : 'localhost'
+  return dockerHost ? new URL(process.env.DOCKER_HOST).hostname : 'localhost'
 }
 
 const port = 4100

@@ -11,7 +11,10 @@ test.beforeEach(async t => {
   await setupContext(t)
 
   const container = createContainer()
-  container.register('log', asFunction(({ t }) => createLogger({ t })))
+  container.register(
+    'log',
+    asFunction(({ t }) => createLogger({ t }))
+  )
 
   t.context.container = container
 })
@@ -24,7 +27,9 @@ test('process', async t => {
 
   const msg = { a: '1', reqId: 2 }
   const event = new EventEmitter()
-  const process = m => { event.emit('data', m) }
+  const process = m => {
+    event.emit('data', m)
+  }
 
   registerSqsQueue(container, {
     ...queueConfig,
@@ -41,7 +46,9 @@ test('process', async t => {
   await queue.publish(msg)
 
   await queue.start()
-  const body = await new Promise(resolve => { event.on('data', resolve) })
+  const body = await new Promise(resolve => {
+    event.on('data', resolve)
+  })
   t.deepEqual(body, { a: '1', reqId: 2 })
   await queue.stop()
 })
