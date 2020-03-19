@@ -1,4 +1,4 @@
-import uuid4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 import { SQS } from 'aws-sdk'
 
 const getDockerHost = () => {
@@ -25,7 +25,7 @@ export const getEndpoint = () => {
 
 export const setupContext = async t => {
   const endpoint = getEndpoint()
-  const name = uuid4()
+  const name = uuidv4()
   const url = [endpoint, 'queue', name].join('/')
   t.context.clientOptions = { ...clientOptions, endpoint }
   const sqsClient = new SQS(t.context.clientOptions)

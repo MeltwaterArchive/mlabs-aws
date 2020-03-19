@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events'
 
-import uuid4 from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 import { SQS } from 'aws-sdk'
 
 import { SqsQueue } from '../lib'
@@ -27,7 +27,7 @@ const createSqsClient = () => {
 
 export default ({ log }) => async (message = 'world') => {
   const endpoint = `http://${getDockerHost()}:4100`
-  const name = uuid4()
+  const name = uuidv4()
   const url = [endpoint, 'queue', name].join('/')
 
   const e = new EventEmitter()
