@@ -58,7 +58,8 @@ a compatible dependency under the corresponding name.
       to register in the Awilix container.
       May be async or return a promise.
       The processor function will receive the output of the parser as the first
-      argument and the entire un-parsed message as the second argument.
+      argument, the Awilix container scoped to this message,
+      and the entire un-parsed message as the third argument.
       Should handle the message and return undefined or throw / reject on error.
       Default: do nothing.
 
