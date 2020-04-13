@@ -7,7 +7,7 @@ import createLogger from '@meltwater/mlabs-logger'
 import { setupContext } from './helpers'
 import { registerSqsQueue } from '../../lib'
 
-test.beforeEach(async t => {
+test.beforeEach(async (t) => {
   await setupContext(t)
 
   const container = createContainer()
@@ -19,7 +19,7 @@ test.beforeEach(async t => {
   t.context.container = container
 })
 
-test('process', async t => {
+test('process', async (t) => {
   t.timeout(3000)
   const { container, queueConfig, clientOptions } = t.context
 
@@ -27,7 +27,7 @@ test('process', async t => {
 
   const msg = { a: '1', reqId: 2 }
   const event = new EventEmitter()
-  const process = m => {
+  const process = (m) => {
     event.emit('data', m)
   }
 
@@ -46,7 +46,7 @@ test('process', async t => {
   await queue.publish(msg)
 
   await queue.start()
-  const body = await new Promise(resolve => {
+  const body = await new Promise((resolve) => {
     event.on('data', resolve)
   })
   t.deepEqual(body, { a: '1', reqId: 2 })

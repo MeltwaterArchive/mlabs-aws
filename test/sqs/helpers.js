@@ -21,7 +21,7 @@ export const getEndpoint = () => {
   return `http://${host}:${port}`
 }
 
-export const setupContext = async t => {
+export const setupContext = async (t) => {
   const endpoint = getEndpoint()
   const name = uuidv4()
   const url = [endpoint, 'queue', name].join('/')

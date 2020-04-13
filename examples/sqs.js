@@ -32,7 +32,7 @@ export default ({ log }) => async (message = 'world') => {
 
   const queue = new SqsQueue({
     sqsClient: createSqsClient(),
-    handler: message => {
+    handler: (message) => {
       e.emit('data', message)
     },
     name,

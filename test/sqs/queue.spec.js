@@ -6,10 +6,10 @@ import createLogger from '@meltwater/mlabs-logger'
 import { setupContext } from './helpers'
 import { SqsQueue } from '../../lib'
 
-test.beforeEach(async t => {
+test.beforeEach(async (t) => {
   await setupContext(t)
 
-  t.context.queue = (t, handler = x => x, opts = {}) =>
+  t.context.queue = (t, handler = (x) => x, opts = {}) =>
     new SqsQueue({
       ...t.context.queueConfig,
       ...opts,
@@ -20,13 +20,13 @@ test.beforeEach(async t => {
   await t.context.queue(t).create()
 })
 
-test('start', async t => {
+test('start', async (t) => {
   const queue = t.context.queue(t)
   await queue.start()
   t.true(queue.isStarted())
 })
 
-test('stop', async t => {
+test('stop', async (t) => {
   const queue = t.context.queue(t)
   await queue.start()
   t.true(queue.isStarted())
@@ -34,29 +34,29 @@ test('stop', async t => {
   t.true(queue.isStopped())
 })
 
-test('process', async t => {
+test('process', async (t) => {
   t.timeout(3000)
   const msg = JSON.stringify({ a: 2 })
   const event = new EventEmitter()
-  const handler = m => {
+  const handler = (m) => {
     event.emit('data', m)
   }
   const queue = t.context.queue(t, handler)
   await queue.publish(msg, { json: false })
 
   await queue.start()
-  const { Body } = await new Promise(resolve => {
+  const { Body } = await new Promise((resolve) => {
     event.on('data', resolve)
   })
   t.is(Body, msg)
   await queue.stop()
 })
 
-test('process batch', async t => {
+test('process batch', async (t) => {
   t.timeout(3000)
   const msg = JSON.stringify({ a: 2 })
   const event = new EventEmitter()
-  const handler = m => {
+  const handler = (m) => {
     event.emit('data', m)
   }
   const queue = t.context.queue(t, handler, { batchSize: 5 })
@@ -65,9 +65,9 @@ test('process batch', async t => {
   )
 
   await queue.start()
-  const { Body } = await new Promise(resolve => {
+  const { Body } = await new Promise((resolve) => {
     let n = 0
-    event.on('data', data => {
+    event.on('data', (data) => {
       n++
       if (n === 5) resolve(data)
     })
