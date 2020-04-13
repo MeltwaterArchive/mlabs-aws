@@ -61,6 +61,7 @@ a compatible dependency under the corresponding name.
       argument, the Awilix container scoped to this message,
       and the entire un-parsed message as the third argument.
       Should handle the message and return undefined or throw / reject on error.
+      The scoped Awilix container has `messageId` and `receiptHandle` registered.
       Default: do nothing.
 
 #### Returns
