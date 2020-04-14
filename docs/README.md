@@ -55,14 +55,30 @@ a compatible dependency under the corresponding name.
       Should return a parsed message or throw.
       Default: identity function.
     - `createProcessor` (*function*): Processor factory function
-      to register in the Awilix container.
-      May be async or return a promise.
-      The processor function will receive the output of the parser as the first
-      argument, the Awilix container scoped to this message,
-      and the entire un-parsed message as the third argument.
-      Should handle the message and return undefined or throw / reject on error.
-      The scoped Awilix container has `messageId` and `receiptHandle` registered.
+      to register in the Awilix container. See below.
       Default: do nothing.
+
+##### Processor
+
+The function returned by `createProcessor`
+may be async or return a promise.
+It should handle the message and return undefined or throw / reject on error.
+It receives the following arguments on each message:
+
+1. The output of the parser.
+2. An Awilix container scoped to this message.
+3. The entire un-parsed message.
+
+The scoped Awilix container
+has these additional dependencies registered:
+
+- `messageId`: The SQS message id.
+- `receiptHandle`: The SQS message receipt handle.
+- `startUpdatingVisibilityTimeout`: Function that take two arguments,
+  the new visibility timeout (in seconds) and a delay (in milliseconds).
+  When called, sets an interval with the given delay that continuously updates
+  the visibility timeout for the message.
+  Returns a function that will stop updating the visibility timeout when called.
 
 #### Returns
 
