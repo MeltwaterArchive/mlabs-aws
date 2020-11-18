@@ -1,6 +1,6 @@
 {
   "name": "@meltwater/mlabs-aws",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Convenient wrappers around the AWS SDK to keep code DRY.",
   "main": "dist/index.js",
   "module": "index.js",
