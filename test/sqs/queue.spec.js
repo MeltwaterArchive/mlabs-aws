@@ -1,7 +1,7 @@
 import EventEmitter from 'events'
 
 import test from 'ava'
-import createLogger from '@meltwater/mlabs-logger'
+import { createLogger } from '@meltwater/mlabs-logger'
 
 import { setupContext } from './helpers'
 import { SqsQueue } from '../../lib'

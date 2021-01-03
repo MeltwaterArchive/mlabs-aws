@@ -2,7 +2,7 @@ import EventEmitter from 'events'
 
 import test from 'ava'
 import { createContainer, asValue, asFunction } from 'awilix'
-import createLogger from '@meltwater/mlabs-logger'
+import { createLogger } from '@meltwater/mlabs-logger'
 
 import { setupContext } from './helpers'
 import { registerSqsQueue } from '../../lib'

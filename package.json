@@ -110,7 +110,7 @@
     "standard": "^16.0.2"
   },
   "dependencies": {
-    "@meltwater/mlabs-logger": "^6.0.0",
+    "@meltwater/mlabs-logger": "^8.0.0",
     "@meltwater/phi": "^3.1.0",
     "awilix": "^4.2.1",
     "aws-sdk": "^2.408.0",
