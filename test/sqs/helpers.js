@@ -1,5 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
-import { SQS } from 'aws-sdk'
+import AWS from 'aws-sdk'
+
+const { SQS } = AWS
 
 const getDockerHost = () => {
   const dockerHost = process.env.DOCKER_HOST
