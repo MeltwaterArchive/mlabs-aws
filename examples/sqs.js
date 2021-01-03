@@ -3,7 +3,7 @@ import { EventEmitter } from 'events'
 import { v4 as uuidv4 } from 'uuid'
 import { SQS } from 'aws-sdk'
 
-import { SqsQueue } from '../lib'
+import { SqsQueue } from '../index.js'
 
 const getDockerHost = () => {
   const dockerHost = process.env.DOCKER_HOST

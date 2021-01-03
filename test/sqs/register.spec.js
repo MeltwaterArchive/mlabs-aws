@@ -4,8 +4,8 @@ import test from 'ava'
 import { createContainer, asValue, asFunction } from 'awilix'
 import { createLogger } from '@meltwater/mlabs-logger'
 
-import { setupContext } from './helpers'
-import { registerSqsQueue } from '../../lib'
+import { setupContext } from './helpers.js'
+import { registerSqsQueue } from '../../index.js'
 
 test.beforeEach(async (t) => {
   await setupContext(t)

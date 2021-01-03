@@ -2,7 +2,7 @@ import path from 'path'
 
 import { createExamples } from '@meltwater/examplr'
 
-import sqs from './sqs'
+import sqs from './sqs.js'
 
 export const examples = {
   sqs
