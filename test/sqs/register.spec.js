@@ -5,7 +5,7 @@ import { createContainer, asValue, asFunction } from 'awilix'
 import { createLogger } from '@meltwater/mlabs-logger'
 
 import { setupContext } from './helpers.js'
-import { registerSqsQueue } from '../../index.js'
+import { registerSqsQueue, SqsQueue } from '../../index.js'
 
 test.beforeEach(async (t) => {
   await setupContext(t)
@@ -25,7 +25,7 @@ test('process', async (t) => {
 
   container.register('t', asValue(t))
 
-  const msg = { a: '1', reqId: 2 }
+  const msg = { a: '1' }
   const event = new EventEmitter()
   const process = (m) => {
     event.emit('data', m)
@@ -35,20 +35,22 @@ test('process', async (t) => {
     ...queueConfig,
     createProcessor: ({ log, reqId }) => async (...args) => {
       log.info('Process: Start')
-      t.is(reqId, 2)
+      t.is(reqId, 'mock-req-id')
       await process(...args)
     },
     clientOptions
   })
   const queue = container.resolve(`${queueConfig.name}SqsQueue`)
 
+  const outputQueue = new SqsQueue({ ...queueConfig, reqId: 'mock-req-id' })
+
   await queue.create()
-  await queue.publish(msg)
+  await outputQueue.publish(msg)
 
   await queue.start()
   const body = await new Promise((resolve) => {
     event.on('data', resolve)
   })
-  t.deepEqual(body, { a: '1', reqId: 2 })
+  t.deepEqual(body, { a: '1', reqId: 'mock-req-id' })
   await queue.stop()
 })
