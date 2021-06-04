@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [2.1.0] / 2021-06-03
+
+### Added
+
+- Register `execId` in container.
+- `reqId` to message attributes.
+
+### Changed
+
+- Default value for `attributeNames` is now `['All']`.
+- Default value for `messageAttributeNames` is now `['All']`.
+- Read `reqId` from message attributes first.
+
+### Fixed
+
+- `reqId` not added to message body.
+
 ## [2.0.0] / 2021-01-03
 
 ### Added
@@ -76,7 +93,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Initial release.
 
-[Unreleased]: https://github.com/meltwater/mlabs-aws/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-aws/compare/v2.1.0...HEAD
+[2.1.0]: https://github.com/meltwater/mlabs-aws/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/meltwater/mlabs-aws/compare/v1.5.1...v2.0.0
 [1.5.1]: https://github.com/meltwater/mlabs-aws/compare/v1.5.0...v1.5.1
 [1.5.0]: https://github.com/meltwater/mlabs-aws/compare/v1.4.0...v1.5.0
