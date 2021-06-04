@@ -33,11 +33,13 @@ test('process', async (t) => {
 
   registerSqsQueue(container, {
     ...queueConfig,
-    createProcessor: ({ log, reqId }) => async (...args) => {
-      log.info('Process: Start')
-      t.is(reqId, 'mock-req-id')
-      await process(...args)
-    },
+    createProcessor:
+      ({ log, reqId }) =>
+        async (...args) => {
+          log.info('Process: Start')
+          t.is(reqId, 'mock-req-id')
+          await process(...args)
+        },
     clientOptions
   })
   const queue = container.resolve(`${queueConfig.name}SqsQueue`)

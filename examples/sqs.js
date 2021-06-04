@@ -25,27 +25,28 @@ const createSqsClient = () => {
   return new SQS(config)
 }
 
-export default ({ log }) => async (message = 'world') => {
-  const endpoint = `http://${getDockerHost()}:4100`
-  const name = uuidv4()
-  const url = [endpoint, 'queue', name].join('/')
+export default ({ log }) =>
+  async (message = 'world') => {
+    const endpoint = `http://${getDockerHost()}:4100`
+    const name = uuidv4()
+    const url = [endpoint, 'queue', name].join('/')
 
-  const e = new EventEmitter()
+    const e = new EventEmitter()
 
-  const queue = new SqsQueue({
-    sqsClient: createSqsClient(),
-    handler: (message) => {
-      e.emit('data', message)
-    },
-    name,
-    url,
-    log
-  })
+    const queue = new SqsQueue({
+      sqsClient: createSqsClient(),
+      handler: (message) => {
+        e.emit('data', message)
+      },
+      name,
+      url,
+      log
+    })
 
-  await queue.create()
-  await queue.publish({ hello: 'world' })
-  await queue.start()
-  const data = await new Promise((resolve, reject) => e.on('data', resolve))
-  await queue.stop()
-  return data
-}
+    await queue.create()
+    await queue.publish({ hello: 'world' })
+    await queue.start()
+    const data = await new Promise((resolve, reject) => e.on('data', resolve))
+    await queue.stop()
+    return data
+  }
