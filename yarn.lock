@@ -1662,10 +1662,10 @@
     "@nodelib/fs.scandir" "2.1.4"
     fastq "^1.6.0"
 
-"@rxfork/sqs-consumer@^6.0.0-beta.1":
-  version "6.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@rxfork/sqs-consumer/-/sqs-consumer-6.0.0-beta.1.tgz#956171f7c897bb6f00543800e7b36ffd00ce20ed"
-  integrity sha512-hIk5yNzNWQ5mkUxA2gkd6h4Grpg5T4W0Ymsn3tkg8zRo9clJVSzRnCSk2QD73ZQ4gtIKY2/HasmnGK2HNhtYFQ==
+"@rxfork/sqs-consumer@^6.0.0-beta.2":
+  version "6.0.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@rxfork/sqs-consumer/-/sqs-consumer-6.0.0-beta.2.tgz#9d80795aff8f710b2f455b4a042e839db08901bf"
+  integrity sha512-dGV/P9f0sQpbWyS7qvitCSTQuW0MRF28Fve7DANqhJxnOQpnvI5KQKirL+D0p9tq0AVw/niS9EZ6qTxgR1OUEA==
   dependencies:
     debug "^4.1.1"
 
