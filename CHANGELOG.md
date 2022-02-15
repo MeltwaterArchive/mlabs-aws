@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [3.0.0] / 2022-02-15
+
+### Changed
+
+- (**Breaking**) Update to AWS SDK version 3.
+  If you are passing in an SQS Client it must now
+  come from @aws-sdk/client-sqs.
+- Update to mlabs-logger v9.
+- Update to awilix v4.
+
 ## [2.1.0] / 2021-06-03
 
 ### Added
