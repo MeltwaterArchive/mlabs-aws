@@ -46,7 +46,6 @@
     "build:lib": "babel --source-maps --ignore='**/*.spec.js' --out-file-extension .cjs --out-dir dist/lib lib",
     "dist": "npm-run-all build",
     "predist": "npm-run-all test",
-    "preversion": "npm-run-all dist",
     "postversion": "git push && git push --tags",
     "example": "node examples",
     "example:watch": "nodemon examples",
