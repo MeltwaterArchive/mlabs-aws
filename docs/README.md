@@ -248,5 +248,5 @@ If the queue is started (synchronous).
 
 [Awilix]: https://github.com/jeffijoe/awilix
 [Logger]: https://github.com/meltwater/mlabs-logger
-[sqs-consumer]: https://github.com/BBC/sqs-consumer
+[sqs-consumer]: https://github.com/rxfork/sqs-consumer
 [SqsQueue]: #sqsqueue
