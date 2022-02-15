@@ -125,7 +125,7 @@
     "@meltwater/phi": "^5.0.0",
     "awilix": "^6.1.0",
     "aws-sdk": "^2.408.0",
-    "sqs-consumer": "^5.0.1",
+    "sqs-consumer": "^5.6.0",
     "uuid": "^8.1.0"
   },
   "devDependencies": {
