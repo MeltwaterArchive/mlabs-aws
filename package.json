@@ -123,7 +123,7 @@
   "dependencies": {
     "@meltwater/mlabs-logger": "^9.1.1",
     "@meltwater/phi": "^5.0.0",
-    "awilix": "^4.2.1",
+    "awilix": "^6.1.0",
     "aws-sdk": "^2.408.0",
     "sqs-consumer": "^5.0.1",
     "uuid": "^8.1.0"
