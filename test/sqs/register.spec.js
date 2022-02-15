@@ -44,7 +44,11 @@ test('process', async (t) => {
   })
   const queue = container.resolve(`${queueConfig.name}SqsQueue`)
 
-  const outputQueue = new SqsQueue({ ...queueConfig, reqId: 'mock-req-id' })
+  const outputQueue = new SqsQueue({
+    ...queueConfig,
+    log: createLogger({ t }),
+    reqId: 'mock-req-id'
+  })
 
   await queue.create()
   await outputQueue.publish(msg)
