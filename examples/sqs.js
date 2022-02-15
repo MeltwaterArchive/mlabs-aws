@@ -1,11 +1,9 @@
 import { EventEmitter } from 'events'
 
 import { v4 as uuidv4 } from 'uuid'
-import AWS from 'aws-sdk'
+import { SQSClient } from '@aws-sdk/client-sqs'
 
 import { SqsQueue } from '../index.js'
-
-const { SQS } = AWS
 
 const getDockerHost = () => {
   const dockerHost = process.env.DOCKER_HOST
@@ -22,7 +20,7 @@ const createSqsClient = () => {
     }
   }
 
-  return new SQS(config)
+  return new SQSClient(config)
 }
 
 export default ({ log }) =>

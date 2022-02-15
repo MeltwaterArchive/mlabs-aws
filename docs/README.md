@@ -30,7 +30,7 @@ For example, registering a queue named `input`
 will register the following dependencies:
 
 - `inputSqsQueue`: The [SqsQueue].
-- `inputSqsQueueClient`: The AWS SQS client.
+- `inputSqsQueueClient`: The AWS SQSClient client.
 - `inputSqsQueueParser`: The parser (see options below).
 - `inputSqsQueueProcessor`: The processor (see options below).
 - `inputSqsQueueHandler`: The SqsQueue handler.
@@ -46,7 +46,7 @@ a compatible dependency under the corresponding name.
     - `name` (*string* **required**): The (unique) queue name.
       The queue will be registered as `${name}SqsQueue`.
     - `url` (*string* **required**): The queue url.
-    - `clientOptions` (*object*): Options passed directly to the AWS SQS constructor.
+    - `clientOptions` (*object*): Options passed directly to the AWS SQSClient constructor.
     - `createParser` (*function*): Parser factory function
       to register in the Awilix container.
       Must be synchronous.
@@ -151,7 +151,7 @@ All methods return a promise unless otherwise noted.
    Any additional options are passed directly to the [sqs-consumer] create method.
     - `name` (*string* **required**): The queue name.
     - `url` (*string* **required**): The queue URL.
-    - `sqsClient` (*object* **required**): The AWS SQS client instance.
+    - `sqsClient` (*object* **required**): The AWS SQSClient client instance.
     - `handler` (*function* **required**): The function called on each message.
       May be async or return a promise.
     - `reqId` (*string*): A request id to bind to the instance.

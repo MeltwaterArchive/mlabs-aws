@@ -1,7 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import AWS from 'aws-sdk'
-
-const { SQS } = AWS
+import { SQSClient } from '@aws-sdk/client-sqs'
 
 const getDockerHost = () => {
   const dockerHost = process.env.DOCKER_HOST
@@ -28,7 +26,7 @@ export const setupContext = async (t) => {
   const name = uuidv4()
   const url = [endpoint, 'queue', name].join('/')
   t.context.clientOptions = { ...clientOptions, endpoint }
-  const sqsClient = new SQS(t.context.clientOptions)
+  const sqsClient = new SQSClient(t.context.clientOptions)
 
   t.context.queueConfig = {
     name,

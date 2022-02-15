@@ -17,7 +17,7 @@ All methods are wrapped with proper logging and error handling.
 - Create or register a queue
   in the Awilix dependency tree with automatic creation of sub-dependencies.
 
-[AWS SDK for JavaScript]: https://github.com/aws/aws-sdk-js
+[AWS SDK for JavaScript]: https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/index.html
 
 ## Installation
 
@@ -41,11 +41,11 @@ $ yarn add @meltwater/mlabs-aws
 **See the complete [API documentation](./docs) and [working examples](./examples).**
 
 ```js
-import { SQS } from 'aws-sdk'
+import { SQSClient } from '@aws-sdk/client-sqs'
 import { SqsQueue } from '@meltwater/mlabs-aws'
 
 const queue = new SqsQueue({
-  sqsClient: new SQS(),
+  sqsClient: new SQSClient(),
   handler: async message => { console.log(message) },
   name: 'my-queue',
   url: 'https://example.com/my-queue'
