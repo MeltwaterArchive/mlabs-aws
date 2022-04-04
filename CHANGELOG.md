@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [4.0.0] / 2022-04-03
+
+### Changed
+
+- Update to awilix v7.
+
 ## [3.0.0] / 2022-02-15
 
 ### Changed
@@ -13,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   If you are passing in an SQS Client it must now
   come from @aws-sdk/client-sqs.
 - Update to mlabs-logger v9.
-- Update to awilix v4.
+- Update to awilix v6.
 
 ## [2.1.0] / 2021-06-03
 
@@ -103,7 +109,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 - Initial release.
 
-[Unreleased]: https://github.com/meltwater/mlabs-aws/compare/v3.0.0...HEAD
+[Unreleased]: https://github.com/meltwater/mlabs-aws/compare/v4.0.0...HEAD
+[4.0.0]: https://github.com/meltwater/mlabs-aws/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/meltwater/mlabs-aws/compare/v2.1.0...v3.0.0
 [2.1.0]: https://github.com/meltwater/mlabs-aws/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/meltwater/mlabs-aws/compare/v1.5.1...v2.0.0
