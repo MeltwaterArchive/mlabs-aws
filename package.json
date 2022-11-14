@@ -121,7 +121,7 @@
     "standard": "^16.0.2"
   },
   "dependencies": {
-    "@aws-sdk/client-sqs": "^3.51.0",
+    "@aws-sdk/client-sqs": "^3.194.0",
     "@meltwater/mlabs-logger": "^9.1.1",
     "@meltwater/phi": "^5.0.0",
     "@rxfork/sqs-consumer": "^6.0.0",
