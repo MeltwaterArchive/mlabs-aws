@@ -125,7 +125,7 @@
     "@meltwater/mlabs-logger": "^9.1.1",
     "@meltwater/phi": "^5.0.0",
     "@rxfork/sqs-consumer": "^6.0.0",
-    "awilix": "^7.0.1",
+    "awilix": "^7.0.3",
     "uuid": "^8.1.0"
   },
   "devDependencies": {
